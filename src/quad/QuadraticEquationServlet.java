@@ -39,7 +39,7 @@ public class QuadraticEquationServlet extends HttpServlet {
 		request.setAttribute("solution", qeq.toString());
 		request.setAttribute("chart", qplot.toHtmlImgTag());
 
-		request.getRequestDispatcher("/Formulario.jsp").forward(request, response);
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	/**
