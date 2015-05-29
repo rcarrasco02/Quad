@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice" xmlns:intf="http://webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getResults">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:double"/>
+      <element name="b" type="xsd:double"/>
+      <element name="c" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getResultsResponse">
+    <complexType>
+     <sequence>
+      <element name="getResultsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPlotB64">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:double"/>
+      <element name="b" type="xsd:double"/>
+      <element name="c" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPlotB64Response">
+    <complexType>
+     <sequence>
+      <element name="getPlotB64Return" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPlotB64Request">
+
+      <wsdl:part element="impl:getPlotB64" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPlotB64Response">
+
+      <wsdl:part element="impl:getPlotB64Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getResultsRequest">
+
+      <wsdl:part element="impl:getResults" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getResultsResponse">
+
+      <wsdl:part element="impl:getResultsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="QuadService">
+
+      <wsdl:operation name="getResults">
+
+         <wsdl:input message="impl:getResultsRequest" name="getResultsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getResultsResponse" name="getResultsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPlotB64">
+
+         <wsdl:input message="impl:getPlotB64Request" name="getPlotB64Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPlotB64Response" name="getPlotB64Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="QuadServiceSoapBinding" type="impl:QuadService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getResults">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getResultsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getResultsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPlotB64">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPlotB64Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPlotB64Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="QuadServiceService">
+
+      <wsdl:port binding="impl:QuadServiceSoapBinding" name="QuadService">
+
+         <wsdlsoap:address location="http://localhost:8080/Quad/services/QuadService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
